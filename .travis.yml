@@ -4,10 +4,7 @@ node_js:
   - "10"
 services:
   - docker
-
 before_install:
   - docker build -t n23space/docker-react -f Dockerfile.dev .
-
-scripts:
+script:
   - docker run n23space/docker-react npm run test -- --coverage
-
