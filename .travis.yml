@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t n23space/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run n23space/docker-react npm run test -- --coverage
+
